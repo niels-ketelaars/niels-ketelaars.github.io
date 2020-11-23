@@ -1,0 +1,68 @@
+;; RefTeX parse info file
+;; File: /home/niels/Documents/Expo/L-series/lseries.tex
+;; User: niels (Niels)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi t)
+
+(bibview-cache)
+
+(master-dir . "/home/niels/Documents/Expo/L-series/")
+
+(label-numbers)
+
+(bof "/home/niels/Documents/Expo/L-series/lseries.tex")
+
+(bof "/home/niels/Documents/Expo/L-series/Preamble.tex")
+
+(bib "/home/niels/Documents/Expo/L-series/refs.bib")
+
+(eof "/home/niels/Documents/Expo/L-series/Preamble.tex")
+
+(toc "toc" "    1 Introduction" "/home/niels/Documents/Expo/L-series/lseries.tex" nil 2 "1" "\\section{Introduction}" 119)
+
+(toc "toc" "    2 The functional equation" "/home/niels/Documents/Expo/L-series/lseries.tex" nil 2 "2" "\\section{The functional equation}" 734)
+
+("thm:zetaeq" "s" "The function $Z(s)$ can be extended to an analytic function on $\\mbf C\\setminus\\{0,1\\}$, with simple" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("def:theta" "s" "The Jacobi theta function is $\\theta(z) = \\sum_{n\\in \\mbf Z} e^{-\\pi n^2 z} = 1+ 2\\sum_{n=1}^\\infty " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("lem:theta" "s" "The Jacobi theta function satisfies \\[\\theta(z^{-1}) = \\sqrt[]{z}\\theta(z). \\] " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+(toc "toc" "    3 Dirichlet L-functions" "/home/niels/Documents/Expo/L-series/lseries.tex" nil 2 "3" "\\section{Dirichlet L-functions}" 4739)
+
+("thm:dleq" "s" "The completed Dirichlet L-function can be extended to an analytic function on the entire complex pla" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("def:theta2" "s" "The theta function associated to $\\chi$ is $\\theta_\\chi(z) = \\sum_{n\\in \\mbf Z} \\chi(n)n^a\\sqrt{z}^a" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("lem:theta2" "s" "If $\\chi$ is primitive, the associated theta function satisfies the tranformation law \\[\\theta_\\chi(" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+(appendix . t)
+
+(toc "toc" "    A Gauss sums" "/home/niels/Documents/Expo/L-series/lseries.tex" nil 2 "A" "\\section{Gauss sums}" 10754)
+
+("app:gsums" "s" "Let $\\chi$ be a Dirichlet character modulo $m$. For $c\\in \\mbf Z$ we define the \\emph{Gauss sum} as " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("lem:nonprim" "s" "If $\\chi$ is a primitive character modulo $m$, and $c$ and $m$ are not coprime, then $\\tau(\\chi, c) " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("lem:chia" "s" "For a primitive character we have that $\\tau(\\chi,c) = \\bar\\chi(c)\\tau(\\chi)$. " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("lem:gsums" "s" "If $\\chi$ is primitive mod $m$, then $|\\tau(\\chi)| = \\sqrt{m}$. Put differently, we have $\\tau(\\chi)" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+(toc "toc" "    B Theta functions" "/home/niels/Documents/Expo/L-series/lseries.tex" nil 2 "B" "\\section{Theta functions}" 13516)
+
+("app:psf" "s" "In this appendix we will prove the necessary transformation laws of the theta functions needed for t" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("thm:psf" "s" "For $f$ `sufficiently nice', we have that \\[\\sum_{n\\in \\bf Z}f(n) = \\sum_{n\\in \\bf Z}\\hat f(n). \\] " "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+("eq:psf" "e" "\\sum_{n\\in \\bf Z}f(pn + t) = \\sum_{n\\in \\bf Z}\\frac{1}{p}\\hat f\\left(\\frac{n}{p}\\right)e^{2\\pi i\\fra" "/home/niels/Documents/Expo/L-series/lseries.tex" nil)
+
+(eof "/home/niels/Documents/Expo/L-series/lseries.tex")
+))
+

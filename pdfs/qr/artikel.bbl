@@ -1,0 +1,178 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{cox}{book}{}
+      \name{author}{1}{}{%
+        {{hash=bc0b42f4eec960b52a2496b25fbb4ec7}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Inc.}%
+      }
+      \strng{namehash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \strng{fullhash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \strng{bibnamehash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \strng{authorbibnamehash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \strng{authornamehash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \strng{authorfullhash}{bc0b42f4eec960b52a2496b25fbb4ec7}
+      \field{labelalpha}{Cox13}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Primes of the form {$x^2 + n y^2$}}
+      \field{year}{2013}
+    \endentry
+    \entry{cfg}{book}{}
+      \name{author}{1}{}{%
+        {{hash=51a74d8aa482f1fcf69bef89697da5ef}{%
+           family={Gauss},
+           familyi={G\bibinitperiod},
+           given={Carl\bibnamedelima Friedrich},
+           giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \strng{fullhash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \strng{bibnamehash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \strng{authorbibnamehash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \strng{authornamehash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \strng{authorfullhash}{51a74d8aa482f1fcf69bef89697da5ef}
+      \field{labelalpha}{Gau01}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Disquisitiones Arithmaticae}
+      \field{year}{1801}
+    \endentry
+    \entry{ir}{book}{}
+      \name{author}{2}{}{%
+        {{hash=539c875b87cbdc0243de5774c29f8756}{%
+           family={Ireland},
+           familyi={I\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7947b192a8184802961c60b084d3df43}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag, New York}%
+      }
+      \strng{namehash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \strng{fullhash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \strng{bibnamehash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \strng{authorbibnamehash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \strng{authornamehash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \strng{authorfullhash}{94e8ba68585b9a3f1f4c9e2a05f420f4}
+      \field{labelalpha}{IR90}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{A Classical Introduction to Modern Number Theory}
+      \field{year}{1990}
+    \endentry
+    \entry{hlps}{article}{}
+      \name{author}{2}{}{%
+        {{hash=bfecd5b86448a940ffe060079b0b74df}{%
+           family={Lenstra},
+           familyi={L\bibinitperiod},
+           given={Hendrik\bibnamedelima W.},
+           giveni={H\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=8051b737bf04ea4f71b4d659681828aa}{%
+           family={Stevenhagen},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \strng{fullhash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \strng{bibnamehash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \strng{authorbibnamehash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \strng{authornamehash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \strng{authorfullhash}{ed2d016fd2ac7d1caefd534e751263c5}
+      \field{labelalpha}{LS00}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nieuw Archief voor Wiskunde}
+      \field{number}{1}
+      \field{title}{Artin Reciprocity and Mersenne Primes}
+      \field{urlday}{1}
+      \field{urlmonth}{3}
+      \field{urlyear}{2020}
+      \field{volume}{5}
+      \field{year}{2000}
+      \field{urldateera}{ce}
+      \field{pages}{44\bibrangedash 54}
+      \range{pages}{11}
+      \verb{urlraw}
+      \verb http://websites.math.leidenuniv.nl/algebra/artin.pdf
+      \endverb
+      \verb{url}
+      \verb http://websites.math.leidenuniv.nl/algebra/artin.pdf
+      \endverb
+    \endentry
+    \entry{as}{online}{}
+      \name{author}{1}{}{%
+        {{hash=683cb7a884b0707bf16ca05a6a06aa9b}{%
+           family={Sletsj\o{}e},
+           familyi={S\bibinitperiod},
+           given={Arne},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \strng{fullhash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \strng{bibnamehash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \strng{authorbibnamehash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \strng{authornamehash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \strng{authorfullhash}{683cb7a884b0707bf16ca05a6a06aa9b}
+      \field{labelalpha}{Sle18}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From quadratic reciprocity to Langlands' program}
+      \field{urlday}{23}
+      \field{urlmonth}{1}
+      \field{urlyear}{2020}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.abelprize.no/c73016/binfil/download.php?tid=73038
+      \endverb
+      \verb{url}
+      \verb https://www.abelprize.no/c73016/binfil/download.php?tid=73038
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

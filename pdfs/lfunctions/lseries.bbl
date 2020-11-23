@@ -1,0 +1,77 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{folland99}{book}{}
+      \name{author}{1}{}{%
+        {{hash=54ed1ea6613484fcbe214674026f96d6}{%
+           family={Folland},
+           familyi={F\bibinitperiod},
+           given={Gerald},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons, Inc}%
+      }
+      \strng{namehash}{54ed1ea6613484fcbe214674026f96d6}
+      \strng{fullhash}{54ed1ea6613484fcbe214674026f96d6}
+      \strng{bibnamehash}{54ed1ea6613484fcbe214674026f96d6}
+      \strng{authorbibnamehash}{54ed1ea6613484fcbe214674026f96d6}
+      \strng{authornamehash}{54ed1ea6613484fcbe214674026f96d6}
+      \strng{authorfullhash}{54ed1ea6613484fcbe214674026f96d6}
+      \field{labelalpha}{Fol99}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Real Analysis: Modern Techniques and Their Applications}
+      \field{year}{1999}
+    \endentry
+    \entry{tate50}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=ae66d765b06d866a6ff6d2ec2ce7aee1}{%
+           family={Tate},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Princeton University}%
+      }
+      \strng{namehash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \strng{fullhash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \strng{bibnamehash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \strng{authorbibnamehash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \strng{authornamehash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \strng{authorfullhash}{ae66d765b06d866a6ff6d2ec2ce7aee1}
+      \field{labelalpha}{Tat50}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Fourier Analysis in Number Fields and Hecke's Zeta Function}
+      \field{type}{phdthesis}
+      \field{year}{1950}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,33 @@
+%basic packages and commands
+\usepackage[english]{babel}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx, float, wrapfig}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\renewcommand{\bf}[1]{\mathbf{#1}}
+\newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+\renewcommand{\mod}{\text{ } \mathrm{mod}\text{ }}
+\DeclareMathOperator{\ggd}{ggd}
+\newcommand{\deff}{\overset{\text{def}}{=}}
+
+%theoremstyles
+\usepackage{thmtools}
+\declaretheorem[style=plain, numberwithin=section, name=Theorem]{theorem}
+\declaretheorem[style=plain, sibling=theorem, name=Corollary]{cor}
+\declaretheorem[style=plain, sibling=theorem, name=Proposition]{prop}
+\declaretheorem[style=plain, sibling=theorem, name=Lemma]{lemma}
+\declaretheorem[style=plain, sibling=theorem, name=Conjecture]{conj}
+
+\declaretheorem[style=definition, sibling=theorem, name=Definition]{defi}
+\declaretheorem[style=definition, numbered=no, name=Example]{ex}
+\declaretheorem[style=remark, sibling=theorem, name=Remark]{remark}
+
+%bibliography
+\usepackage[backend=biber, style=alphabetic, citestyle=alphabetic]{biblatex}
+\renewbibmacro{in:}{}
+\addbibresource{bib.bib}
+
+%layout
+%\usepackage{mathpazo}
+%\usepackage{euler}

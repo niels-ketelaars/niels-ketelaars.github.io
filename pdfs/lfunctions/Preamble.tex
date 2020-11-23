@@ -1,0 +1,30 @@
+%basic packages and commands
+\usepackage{amsmath,amsthm,amssymb,eufrak}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\fr}[1]{\mathfrak{#1}}
+\renewcommand{\mod}{\text{ mod }}
+\renewcommand{\bar}[1]{\overline{#1}}
+
+%theoremstyles
+\usepackage{thmtools}
+\declaretheorem[style=plain, numberwithin=section, name=Theorem]{theorem}
+\declaretheorem[style=plain, sibling=theorem, name=Corollary]{cor}
+\declaretheorem[style=plain, sibling=theorem, name=Proposition]{prop}
+\declaretheorem[style=plain, sibling=theorem, name=Lemma]{lemma}
+
+\declaretheorem[style=definition, sibling=theorem, name=Definition]{defi}
+\declaretheorem[style=definition, numbered=no, name=Example]{ex}
+\declaretheorem[style=remark, sibling=theorem, name=Remark]{remark}
+
+%bibliography
+\usepackage[style=alphabetic, citestyle=alphabetic, backend=biber]{biblatex}
+\renewbibmacro{in:}{}
+\addbibresource{refs.bib}
+
+%layout
+\usepackage[margin=4cm]{geometry}
+%\usepackage{titlesec}

@@ -1,0 +1,232 @@
+\documentclass{amsart}
+\input{Preamble}
+
+\title{L-functions}
+\author{Niels Ketelaars}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Most people are familiar with the \emph{Riemann zeta function},
+\[\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s}, \quad \Re(s) > 1. \]
+It can be shown to have an analytic extension to the entire complex plane, except for a simple pole at $s=1$, and it satisfies a functional equation relating the values of $\zeta(s)$ and $\zeta(1-s)$. The zeta function is famous for its many connections to number theory, and the mysterious arithmetic properties is carries with it. Here we will discuss zeta function itself, and a few examples of a more general class of functions, called \emph{L-functions}.
+
+\section{The functional equation}
+One of the first important properties of the zeta function, is its expansion as an Euler product:
+\[ \zeta(s) = \prod_{p \text{ prime}} (1-p^{-s})^{-1}, \]
+which, when regarded as a formal identity, is a consequence of unique factorisation of integers. The individual factors of the product are called the Euler factors, so there is an Euler factor for each prime. But there is in fact a factor missing. For reasons we will not discuss here, it is helpful to also consider the so called `infinite' Euler factor,
+\[\zeta_\infty(s) = \pi^{-s/2}\Gamma\left(\frac{s}{2}\right), \]
+where $\Gamma$ is the usual Gamma function. We define the completed zeta function as $Z(s) = \zeta_\infty(s)\zeta(s)$. This brings us to probably the most important theorem regarding the zeta function.
+\begin{theorem}
+\label{thm:zetaeq}
+The function $Z(s)$ can be extended to an analytic function on $\mbf C\setminus\{0,1\}$, with simple poles at $0$ and $1$. The completed zeta function also satisfies the functional equation
+\[Z(s) = Z(1-s). \]
+\end{theorem}
+
+The proof makes use of a few important results from Fourier analysis. Namely, we will need the following:
+\begin{defi}
+  \label{def:theta}
+  The Jacobi theta function is $\theta(z) = \sum_{n\in \mbf Z} e^{-\pi n^2 z} = 1+ 2\sum_{n=1}^\infty e^{-\pi n^2 z}$.
+\end{defi}
+
+\begin{lemma}
+  \label{lem:theta}
+  The Jacobi theta function satisfies
+  \[\theta(z^{-1}) = \sqrt[]{z}\theta(z). \]
+\end{lemma}
+The proof of this fact follows from the Poisson summation formula and the fact that the function $z \mapsto e^{-\pi z^2}$ is its own Fourier transform. For a proof of the lemma assuming the Poisson summation formula, see Appendix \ref{app:psf}.
+
+
+\begin{proof}[Proof of theorem \ref{thm:zetaeq}]
+  For $\Re(s) > 1$ we have that
+  \begin{align*}
+    Z(s) &= \pi^{-s/2}\Gamma\left(\frac{s}{2}\right)\zeta(s) \\
+         &= \pi^{-s/2}\sum_{n\geq 1} n^{-s} \int_0^\infty e^{-t}t^{s/2} \frac{dt}{t} \\
+         &= \sum_{n\geq 1} \int_0^\infty e^{-t} \left(\frac{t}{\pi n^2}\right)^{s/2} \frac{dt}{t}.
+  \end{align*}
+  Using the substitution $y=\frac{t}{\pi n^2}$, we get that this equals
+  \[\sum_{n\geq 1} \int_0^\infty e^{-\pi n^2 y} y^{s/2} \frac{dy}{y}. \]
+  Because of absolute convergence of the sum-integral when $\Re(s) > 1$, this is equal to
+  \[ \int_0^\infty\sum_{n\geq 1} e^{-\pi n^2 y} y^{s/2} \frac{dy}{y}. \]
+  We write $h(y) = \sum_{n\geq 1} e^{-\pi n^2 y} = \frac{1}{2}(\theta(y)-1)$. The transformation property of the theta function (Lemma \ref{lem:theta}) tells us that $h\left(\frac{1}{y}\right) = \frac{1}{2}(\sqrt{y} - 1) + \sqrt{y}h(y)$.
+
+  We now split the integral up in two:
+  \begin{align*}
+    \int_0^\infty h(y) y^{s/2} \frac{dy}{y} &= \int_0^1  h(y) y^{s/2} \frac{dy}{y} + \int_1^\infty  h(y) y^{s/2} \frac{dy}{y}
+  \end{align*}
+  The latter integral converges for all complex $s$, and so it is the first one that we must pay close attention to. Using the substitution $y\mapsto \frac{1}{y}$ and the tranformation property, it equals
+  \begin{align*}
+    \int_0^1  h(y) y^{s/2} \frac{dy}{y} &=  \int_\infty^1  h(1/y) y^{-s/2} \frac{dy}{-y} \\
+                                        &= \int_1^\infty h(1/y) y^{-s/2} \frac{dy}{y} \\
+                                        &= \int_1^\infty  \frac{1}{2}(\sqrt{y} - 1)y^{-s/2} \frac{dy}{y} +\int_1^\infty  y^{(1-s)/2}h(y) \frac{dy}{y} \\
+                                        &= \int_1^\infty  \frac{1}{2}(y^{(1-s)/2} - y^{-s/2}) \frac{dy}{y} +\int_1^\infty  y^{(1-s)/2}h(y) \frac{dy}{y} \\
+    &= -\frac{1}{1-s} -\frac{1}{s} + \int_1^\infty  y^{(1-s)/2}h(y) \frac{dy}{y}.
+  \end{align*}
+  Combining with the other integral, we see that
+  \[Z(s) = \int_1^\infty h(y) \left( y^{(1-s)/2} + y^{s/2}  \right)\frac{dy}{y} - \frac{1}{1-s} - \frac{1}{s}. \]
+  The integral converges for all complex $s$ and defines $Z(s)$ as an analytic function on the entire complex plane except for obvious poles at $s=0,1$, and we clearly have that $Z(s) = Z(1-s)$.
+\end{proof}
+
+\section{Dirichlet L-functions}
+The Riemann zeta function is only a a specific function in a much more general class. In general, we call any function of the form
+\[L(s, a_n) = \sum_{n=1}^\infty \frac{a_n}{n^s} \]
+an L-function. For arbitrary sequences $a_n$ there is no reason to suspect it has an analytic extension to a larger domain or satisfies any kind of functional equation. However, a general trend in number theory seems to be that whenever the sequence $a_n$ is based on some `arithmetic or analytic object', like a Dirichlet or Hecke character, or a modular form, then (usually) the L-function does in fact have such an extension, and satisfies a functional equation similar to that of the completed Riemann zeta function.
+
+In this section we will turn to L-functions based on Dirichlet characters. A Dirichlet character modulo $m>1$ is a homomorphism $\chi: (\mbf Z/m\mbf Z)^* \to \mbf C^*$. We usually extend such a character to a function $\mbf Z \to \mbf C$ by setting
+\[
+\chi(n) = \begin{cases} \chi(n \mod m) &\text{ if } \gcd(n,m)=1, \\ 0 &\text{ otherwise.} \end{cases}
+\]
+The conjugate character $\bar\chi$ is given by $\bar\chi(n) = \bar{\chi(n)}$.
+If $k$ is any multiple of $m$ and $\chi$ is a Dirichlet character modulo $m$, we can define $\chi^*$ by
+\[
+\chi^*(n) = \begin{cases} \chi(n) &\text{ if } \gcd(n,k)=1, \\ 0 &\text{ otherwise.} \end{cases}
+\]
+Then $\chi^*$ is a Dirichlet character with modulus $k$, and we say that it is \emph{induced} by $\chi$. If a Dirichlet character is not induced by any character of a stricly smaller modulus, we call it \emph{primitive}. Lastly, we call a Dirichlet character \emph{even} if $\chi(-1)=1$, and \emph{odd} if $\chi(-1)=-1$.
+
+Given a Dirichlet character, we define the associated Dirichlet L-function as
+\[L(s,\chi) = \sum_{n=1}^\infty \frac{\chi(n)}{n^s}. \]
+It converges for all $s$ with large enough real part. If $\chi$ is a primitive character modulo $m$, we define the completed L-function as
+\[\Lambda(s, \chi) = \left( \frac{\pi}{m} \right)^{-(s+a)/2}\Gamma \left( \frac{s+a}{2} \right)L(s,\chi), \]
+where $a=0$ if $\chi$ is even, and $1$ if it is odd. We have the following analogue of Theorem \ref{thm:zetaeq}.
+
+\begin{theorem}
+\label{thm:dleq}
+The completed Dirichlet L-function can be extended to an analytic function on the entire complex plane, and satisfies the functional equation
+\[ \Lambda(1-s, \bar\chi) = \frac{i^a\sqrt{m}}{\tau(\chi)}\Lambda(s, \chi), \]
+where $\tau(\chi)$ is the Gauss sum associated to $\chi$.
+\end{theorem}
+For the reader who is unfamiliar with Gauss sums, see Appendix \ref{app:gsums} for the necessary information.
+We also need analogues of Definition \ref{def:theta} and Lemma \ref{lem:theta}.
+\begin{defi}
+  \label{def:theta2}
+  The theta function associated to $\chi$ is $\theta_\chi(z) = \sum_{n\in \mbf Z} \chi(n)n^a\sqrt{z}^ae^{-\pi n^2z/m} = 2 \sum_{n\geq 1 } \chi(n)n^a\sqrt{z}^ae^{-\pi n^2z/m}$.
+\end{defi}
+
+\begin{lemma}
+  \label{lem:theta2}
+  If $\chi$ is primitive, the associated theta function satisfies the tranformation law
+  \[\theta_\chi(z^{-1}) = \frac{\sqrt{mz}}{(-i)^a \tau(\bar\chi)} \theta_{\bar\chi}(z). \]
+\end{lemma}
+The proof can again be found in Appendix \ref{app:psf}. 
+
+\begin{proof}[Proof of Theorem \ref{thm:dleq}]
+  Similar to the case of the Riemann zeta function, we can rewrite the completed L-function as
+  \begin{align*}
+    \Lambda(s,\chi) &= \left( \frac{\pi}{m} \right)^{-(s+a)/2}\sum_{n\geq 1}\chi(n)n^{-s}\int_0^\infty e^{-t}t^{-(s+a)/2} \frac{dt}{t}\\
+                    &= \int_0^\infty \sum_{n\geq 1}n^a\sqrt{y}^a \chi(n)e^{-\pi n^2 y/m} y^{s/2} \frac{dy}{y} \\
+                    &=\frac{1}{2} \int_0^\infty \theta_\chi(y) y^{s/2} \frac{dy}{y},
+  \end{align*}
+  where we used the substitution $t = \frac{\pi n^2 y}{m}$. We again split the integral up into a part going from $0$ to $1$ and $1$ to infinity:
+\[\frac{1}{2} \int_0^1 \theta_\chi(y) y^{s/2} \frac{dy}{y} + \frac{1}{2} \int_1^\infty \theta_\chi(y) y^{s/2} \frac{dy}{y}. \]
+The latter integral again converges for all $s$, so we focus on the first. Using the substitution $y\mapsto \frac{1}{y}$ and Lemma \ref{lem:theta2}, we get that this integral equals
+\begin{align*}
+  \int_0^1 \theta_\chi(y) y^{s/2} \frac{dy}{y} &= \int_\infty^1 \theta_\chi(y^{-1}) y^{-s/2} \frac{dy}{-y} \\
+                                               &=  \int_1^\infty\frac{\sqrt{my}}{(-i)^a \tau(\bar\chi)} \theta_{\bar\chi}(y) y^{-s/2}\frac{dy}{y} \\
+  &= \frac{\sqrt{m}}{(-i)^a \tau(\bar\chi)} \int_1^\infty \theta_{\bar\chi}(y) y^{(1-s)/2}\frac{dy}{y},
+\end{align*}
+and hence
+\[\Lambda(s,\chi) =  \frac{\sqrt{m}}{2(-i)^a \tau(\bar\chi)} \int_1^\infty \theta_{\bar\chi}(y) y^{(1-s)/2}\frac{dy}{y} + \frac{1}{2} \int_1^\infty \theta_\chi(y) y^{s/2} \frac{dy}{y}. \]
+Both integrals converge for all $s\in \mbf C$, and this defines an analytic function on $\mbf C$. It is left to the reader to check that it satisfies the functional equation (hint: Lemma \ref{lem:gsums}).
+\end{proof}
+
+There is a generalization of Dirichlet characters, called Hecke characters, which also have an associated L-function, which follows a similar functional equation. The proof again associates certain theta functions to these characters which transform in similar ways. The proof, like the one above, is easy in the sense that (apart from the Poisson summation formula) only requires basic analysis. It can however at times be hard to follow what is going on, with all the giant integrals and sums floating around. One of the great feats of the 20th century was John Tate's famous thesis \cite{tate50}. In it, Tate used generalizations of Fourier analysis and the Poisson summation formula to \emph{p-adic} fields, to generalize the above techniques and subsequently remove the need for special theta functions. It also clarified the mysterious appearance of the `infinite Euler factor' $\zeta_\infty(s)$ in the definition of the completed zeta function, and the similar factor in the completed Dirichlet L-function.
+
+
+\appendix
+\section{Gauss sums}
+\label{app:gsums}
+Let $\chi$ be a Dirichlet character modulo $m$. For $c\in \mbf Z$ we define the \emph{Gauss sum} as
+\[\tau(\chi, c) = \sum_{n \mod m}\chi(n)e^{2\pi i cn/m}. \]
+We will also write $\tau(\chi) = \tau(\chi, 1)$.
+
+\begin{lemma}
+  \label{lem:nonprim}
+  If $\chi$ is a primitive character modulo $m$, and $c$ and $m$ are not coprime, then $\tau(\chi, c) = 0$.
+\end{lemma}
+
+\begin{proof}
+  Let  $m' = \frac{m}{\gcd(m,c)}$. By primitivity there exists $u \in (\mbf Z/m\mbf Z)^*$ with $u\equiv 1\mod m'$ and $\chi(u)\neq 1$ (check this!). Let $v$ be such that $uv\equiv 1 \mod m$. Then $v \equiv 1\mod m'$, and as $n$ runs through a complete residue system of $\mbf Z/m\mbf Z$, so does $vn$. Hence
+  \[\chi(u) \tau(\chi,c) = \sum_{n \mod m}\chi(un)e^{2\pi i cn/m} =  \sum_{n \mod m}\chi(n)e^{2\pi i cvn/m}. \]
+  We see that $e^{2\pi i cn/m}$ is an $m'$-th root of unity, and thus rasing to the power $v$ (which is $1\mod m'$), we see that this is
+  \[\sum_{n \mod m}\chi(n)\left( e^{2\pi i cn/m}\right)^v = \sum_{n \mod m}\chi(n)e^{2\pi i cn/m} = \tau(\chi,c). \]
+  Since we chose $u$ cuch that $\chi(u)\neq 1$, we must have that $\tau(\chi,c)=1$.
+\end{proof}
+
+\begin{lemma}
+  \label{lem:chia}
+  For a primitive character we have that $\tau(\chi,c) = \bar\chi(c)\tau(\chi)$.
+\end{lemma}
+
+
+\begin{proof}
+  If $c$ is not coprime to the modulus this follows directly from the previous lemma. If $c$ is coprime to the modulus, then as $n$ runs through a residuesystem modulo $m$, then so does $cn$. Hence
+  \[\chi(c)\tau(\chi,c) = \sum_{n\mod m} \chi(cn) e^{2\pi i cn/m} = \sum_{n\mod m} \chi(n) e^{2\pi i n/m} = \tau(\chi). \]
+  The statement now follows from the fact that $\bar\chi(c)\chi(c) = |\chi(c)| = 1$ (since a character on a finite group must take values in the unit circle).
+\end{proof}
+
+\begin{lemma}
+  \label{lem:gsums}
+  If $\chi$ is primitive mod $m$, then $|\tau(\chi)| = \sqrt{m}$. Put differently, we have $\tau(\chi)\tau(\bar\chi) = \chi(-1)m$.
+\end{lemma}
+
+\begin{proof}
+  On the one hand, using the previous lemma we see that
+  \[\tau(\chi,c)\bar{\tau(\chi,c)} = \bar\chi(c)\chi(c)\tau(\chi)\bar{\tau(\chi)} = |\chi(c)|^2|\tau(\chi)|^2, \]
+  and thus
+  \[\sum_{c \mod m} \tau(\chi,c)\bar{\tau(\chi,c)} = (m-1)|\tau(\chi)|^2. \]
+  On the other hand we can write out the definitions to see that
+  \[\sum_{c \mod m} \tau(\chi,c)\bar{\tau(\chi,c)} = \sum_{c \mod m} \sum_{u,v \mod m} \chi(u)\bar\chi(v)e^{2\pi i c(u-v)/m}\]\[= \sum_{u,v\mod m} \chi(u)\bar\chi(v) \sum_{c \mod m} \left( e^{2\pi i/m} \right)^{c(u-v)}.\]
+  On easily shows the latter sum is $0$, unless $u=v$, in which case it is $m$. Hence this reduces to
+  \[\sum_{u\mod m} \chi(u)\bar\chi(u)m = (m-1)m. \]
+  From this the lemma follows.
+\end{proof}
+
+
+\section{Theta functions}
+\label{app:psf}
+In this appendix we will prove the necessary transformation laws of the theta functions needed for the proofs of the functional equations.
+
+For a suitable class of functions, we can define the Fourier tranform $\hat f$ of a function $f$ by
+\[\hat f(\xi) = \int_0^\infty f(t) e^{2\pi i \xi t} dt. \]
+We have the following important theorem from Fourier analysis.
+
+\begin{theorem}[Poisson summation formula]
+\label{thm:psf}
+For $f$ `sufficiently nice', we have that
+\[\sum_{n\in \bf Z}f(n) = \sum_{n\in \bf Z}\hat f(n).  \]
+\end{theorem}
+The proof can be found in any book on the topic, for instance, \cite[Theorem 8.32]{folland99}.
+It follows from elementary properties of the Fourier tranform that we also have
+\begin{equation}
+  \label{eq:psf}
+  \sum_{n\in \bf Z}f(pn + t) = \sum_{n\in \bf Z}\frac{1}{p}\hat f\left(\frac{n}{p}\right)e^{2\pi i\frac{n}{p} t}.
+\end{equation}
+
+To make use of this to proof our desired tranformations, we will need a special function to apply the P.S.F. to. We will use the function given by $f(x) = x^ae^{-\pi x^2}$, $a\in \{0,1\}$. This function is special because it is an eigenfunction of the Fourier tranform. It is left as an exercise to the reader to check that $\hat f = (-i)^a f$.
+
+\begin{proof}[Proof of Lemma \ref{lem:theta}]
+  If we write $f(x) = e^{-\pi x^2}$, the theta function is $\theta(z) = \sum_{n\in \bf Z} f(n\sqrt{z})$. By equation \eqref{eq:psf}, this is equal to $\sum_{n\in \bf Z} \frac{1}{\sqrt{z}} \hat f \left( \frac{n}{\sqrt{z}} \right)$. Since $f$ is its own Fourier tranform, this is exactly $\frac{1}{\sqrt{z}} \theta \left( \frac{1}{z} \right)$, which proves the tranformation law. 
+\end{proof}
+
+The proof for the tranformation of the theta fucntion associated to a Dirichlet character is a little more involved, and requires some facts about Gauss sums, which can be found in Appendix \ref{app:gsums}.
+\begin{proof}[Proof of Lemma \ref{lem:theta2}]
+  This time we write $f(x) = x^ae^{-\pi x^2}$. In that case, we get that
+  \[\theta_\chi(z) =\sqrt{m} \sum_{n\in \mbf Z}\chi(n) f \left( \frac{n\sqrt{z}}{\sqrt{m}} \right). \]
+  This is not yet in a form to which Poisson summation can be applied. To achieve this, we rewrite the sum as a double sum
+  \[\sum_{n\in \mbf Z} \chi(n)n^a\sqrt{z}^ae^{-\pi n^2z/m} = \sum_{b \mod m}\chi(b)\sum_{k\in \mbf Z} (mk+b)^a\sqrt{z}^ae^{-\pi (mk+b)^2z/m} \]
+  \[= \sqrt{m} \sum_{b\mod m} \chi(m)\sum_{k\in \mbf Z} f \left( \frac{(mk+b)\sqrt{z}}{\sqrt{k}} \right). \]
+  We can apply Poisson summation to the latter sum. By Equation \eqref{eq:psf}, we get
+  \[ \sqrt{m} \sum_{b\mod m} \chi(m)\sum_{k\in \mbf Z}\frac{1}{\sqrt{mz}} \hat f \left( \frac{k}{\sqrt{mz}} \right)e^{2\pi i kb/m} \]
+  \[= \frac{(-i)^a}{\sqrt{mz}}\sqrt{m} \sum_{k\in\mbf Z} f \left( \frac{k}{\sqrt{mz}} \right)\sum_{b\mod m}\chi(b)e^{2\pi i kb/m} \]
+  \[ = \frac{(-i)^a}{\sqrt{mz}}\sqrt{m} \sum_{k\in\mbf Z} f \left( \frac{k}{\sqrt{mz}} \right)\tau(\chi,k). \]
+  By Lemma \ref{lem:chia}, this is
+  \[\frac{(-i)^a\tau(\chi)}{\sqrt{mz}}\sqrt{m} \sum_{k\in\mbf Z}\bar\chi(k) f \left( \frac{k}{\sqrt{mz}} \right) \]
+  which we recognize as precisely
+  \[\frac{(-i)^a\tau(\chi)}{\sqrt{mz}}\theta_{\bar\chi}(z^{-1}). \]
+  The lemma now follows by replacing $\chi$ by $\bar\chi$ and rearranging.
+\end{proof}
+
+\printbibliography
+
+\end{document}
